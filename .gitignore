@@ -20,3 +20,6 @@ npm-debug.log
 # UPLOADS
 backend_savana_oficial/upload/*
 !backend_savana_oficial/upload/.gitkeep
+node_modules/
+cypress/videos/
+cypress/screenshots/

@@ -1,0 +1,23 @@
+{
+  "name": "savana-entrega-final",
+  "version": "1.0.0",
+  "description": "☕🐾 Savana — Cafeteria com Propósito",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PedroBryk/savana-cypress.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PedroBryk/savana-cypress/issues"
+  },
+  "homepage": "https://github.com/PedroBryk/savana-cypress#readme",
+  "devDependencies": {
+    "cypress": "^16.1.1"
+  }
+}
