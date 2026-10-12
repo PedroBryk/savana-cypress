@@ -50,35 +50,36 @@ export const CadastroFuncionario = () => {
 
   return (
     <form
+      data-cy="cadastro-funcionario-form"
       onSubmit={handleSubmit(onSubmit)}
       className="flex flex-col justify-around rounded-sm gap-6 p-16 bg-backgroundClaro"
     >
       <div className="flex flex-col">
-        <Input placeholder="CPF" {...register("cpf")} />
-        {errors.cpf && <span className="text-red-500 text-sm">{errors.cpf.message}</span>}
+        <Input data-cy="cadastro-cpf" placeholder="CPF" {...register("cpf")} />
+        {errors.cpf && <span data-cy="cadastro-cpf-erro" className="text-red-500 text-sm">{errors.cpf.message}</span>}
       </div>
 
       <div className="flex flex-col">
-        <Input placeholder="Nome Completo" {...register("nome")} />
-        {errors.nome && <span className="text-red-500 text-sm">{errors.nome.message}</span>}
+        <Input data-cy="cadastro-nome" placeholder="Nome Completo" {...register("nome")} />
+        {errors.nome && <span data-cy="cadastro-nome-erro" className="text-red-500 text-sm">{errors.nome.message}</span>}
       </div>
 
       <div className="flex flex-col">
-        <Input type="email" placeholder="Email" {...register("email")} />
-        {errors.email && <span className="text-red-500 text-sm">{errors.email.message}</span>}
+        <Input data-cy="cadastro-email" type="email" placeholder="Email" {...register("email")} />
+        {errors.email && <span data-cy="cadastro-email-erro" className="text-red-500 text-sm">{errors.email.message}</span>}
       </div>
 
       <div className="flex flex-col">
-        <Input type="password" placeholder="Senha" {...register("senha")} />
-        {errors.senha && <span className="text-red-500 text-sm">{errors.senha.message}</span>}
+        <Input data-cy="cadastro-senha" type="password" placeholder="Senha" {...register("senha")} />
+        {errors.senha && <span data-cy="cadastro-senha-erro" className="text-red-500 text-sm">{errors.senha.message}</span>}
       </div>
 
       <div className="flex flex-col">
-        <Input type="password" placeholder="Confirmar Senha" {...register("confirmarSenha")} />
-        {errors.confirmarSenha && <span className="text-red-500 text-sm">{errors.confirmarSenha.message}</span>}
+        <Input data-cy="cadastro-confirmar-senha" type="password" placeholder="Confirmar Senha" {...register("confirmarSenha")} />
+        {errors.confirmarSenha && <span data-cy="cadastro-confirmar-senha-erro" className="text-red-500 text-sm">{errors.confirmarSenha.message}</span>}
       </div>
 
-      <Button type="submit" disabled={isSubmitting}>
+      <Button data-cy="cadastro-submit" type="submit" disabled={isSubmitting}>
         {isSubmitting ? "Cadastrando..." : "Cadastrar"}
       </Button>
     </form>

@@ -57,35 +57,36 @@ export const CadastroProdutos = () => {
 
   return (
     <form
+      data-cy="produto-form"
       onSubmit={handleSubmit(onSubmit)}
       className="flex flex-col justify-around rounded-sm gap-6 p-16 bg-backgroundClaro"
     >
       <div className="flex flex-col">
-        <Input placeholder="Nome do Produto" {...register("nome")} />
-        {errors.nome && <span className="text-red-500 text-sm">{errors.nome.message}</span>}
+        <Input data-cy="produto-nome" placeholder="Nome do Produto" {...register("nome")} />
+        {errors.nome && <span data-cy="produto-nome-erro" className="text-red-500 text-sm">{errors.nome.message}</span>}
       </div>
 
       <div className="flex flex-col">
-        <Input placeholder="Descrição" {...register("descricao")} />
-        {errors.descricao && <span className="text-red-500 text-sm">{errors.descricao.message}</span>}
+        <Input data-cy="produto-descricao" placeholder="Descrição" {...register("descricao")} />
+        {errors.descricao && <span data-cy="produto-descricao-erro" className="text-red-500 text-sm">{errors.descricao.message}</span>}
       </div>
 
       <div className="flex flex-col">
-        <Input type="number" step="0.01" placeholder="Preço (ex: 12.90)" {...register("preco")} />
-        {errors.preco && <span className="text-red-500 text-sm">{errors.preco.message as string}</span>}
+        <Input data-cy="produto-preco" type="number" step="0.01" placeholder="Preço (ex: 12.90)" {...register("preco")} />
+        {errors.preco && <span data-cy="produto-preco-erro" className="text-red-500 text-sm">{errors.preco.message as string}</span>}
       </div>
 
       <div className="flex flex-col">
-        <Input placeholder="Categoria (ex: Bebidas, Doces)" {...register("categoria")} />
-        {errors.categoria && <span className="text-red-500 text-sm">{errors.categoria.message as string}</span>}
+        <Input data-cy="produto-categoria" placeholder="Categoria (ex: Bebidas, Doces)" {...register("categoria")} />
+        {errors.categoria && <span data-cy="produto-categoria-erro" className="text-red-500 text-sm">{errors.categoria.message as string}</span>}
       </div>
 
       <div className="flex flex-col gap-1">
         <label className="text-sm text-gray-600">Foto do produto</label>
-        <input type="file" accept="image/*" ref={imageRef} className="text-sm text-background" />
+        <input data-cy="produto-foto" type="file" accept="image/*" ref={imageRef} className="text-sm text-background" />
       </div>
 
-      <Button type="submit" disabled={isSubmitting}>
+      <Button data-cy="produto-submit" type="submit" disabled={isSubmitting}>
         {isSubmitting ? "Cadastrando..." : "Cadastrar"}
       </Button>
     </form>

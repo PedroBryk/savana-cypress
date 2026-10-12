@@ -28,6 +28,7 @@ export const Header = () => {
       <div className="absolute left-6">
         {logado ? (
           <button
+            data-cy="btn-logout"
             onClick={handleLogout}
             className="text-sm font-medium text-white bg-red-600 px-4 py-2 rounded hover:bg-red-700"
           >

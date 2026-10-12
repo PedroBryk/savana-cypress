@@ -54,7 +54,7 @@ export default function CardapioPage() {
       ) : (
         <div className="grid gap-6 justify-items-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
           {itens.map((item) => (
-            <div key={item.id} className="flex flex-col items-center gap-2">
+            <div key={item.id} data-cy="menu-item" className="flex flex-col items-center gap-2">
               <CardProduto
                 image={item.image ? `http://localhost:3000${item.image}` : "/images/comidas/capucino.png"}
                 imageAlt={item.name}

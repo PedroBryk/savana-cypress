@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const Gerenciamento = () => {
   return (
-    <div className="flex flex-col justify-around rounded-sm gap-6 p-16 bg-backgroundClaro">
+    <div data-cy="gerenciamento" className="flex flex-col justify-around rounded-sm gap-6 p-16 bg-backgroundClaro">
       
       <Link href="/cadastro/animal">
         <Button>Cadastrar Animal</Button>

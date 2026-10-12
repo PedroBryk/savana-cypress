@@ -55,7 +55,7 @@ export default function AdocaoPage() {
       ) : (
         <div className="grid gap-6 justify-items-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
           {pets.map((pet) => (
-            <div key={pet.id} className="flex flex-col items-center gap-2">
+            <div key={pet.id} data-cy="pet-item" className="flex flex-col items-center gap-2">
               <CardAnimal
                 image={pet.image ? `http://localhost:3000${pet.image}` : "/images/animais/smiliguido.png"}
                 imageAlt={pet.name}

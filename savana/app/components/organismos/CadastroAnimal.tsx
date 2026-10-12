@@ -58,45 +58,48 @@ export const CadastroAnimal = () => {
 
   return (
     <form
+      data-cy="animal-form"
       onSubmit={handleSubmit(onSubmit)}
       className="flex flex-col justify-around rounded-sm gap-6 p-16 bg-backgroundClaro"
     >
       <div className="flex flex-col">
-        <Input placeholder="Nome do Animal" {...register("nome")} />
-        {errors.nome && <span className="text-red-500 text-sm">{errors.nome.message}</span>}
+        <Input data-cy="animal-nome" placeholder="Nome do Animal" {...register("nome")} />
+        {errors.nome && <span data-cy="animal-nome-erro" className="text-red-500 text-sm">{errors.nome.message}</span>}
       </div>
 
       <div className="flex flex-col">
-        <Input placeholder="Espécie" {...register("especie")} />
-        {errors.especie && <span className="text-red-500 text-sm">{errors.especie.message}</span>}
+        <Input data-cy="animal-especie" placeholder="Espécie" {...register("especie")} />
+        {errors.especie && <span data-cy="animal-especie-erro" className="text-red-500 text-sm">{errors.especie.message}</span>}
       </div>
 
       <div className="flex flex-col">
-        <Input placeholder="Sexo" {...register("sexo")} />
-        {errors.sexo && <span className="text-red-500 text-sm">{errors.sexo.message}</span>}
+        <Input data-cy="animal-sexo" placeholder="Sexo" {...register("sexo")} />
+        {errors.sexo && <span data-cy="animal-sexo-erro" className="text-red-500 text-sm">{errors.sexo.message}</span>}
       </div>
 
       <div className="flex flex-col">
-        <Input type="number" placeholder="Idade Aproximada" {...register("idade")} />
-        {errors.idade && <span className="text-red-500 text-sm">{errors.idade.message}</span>}
+        <Input data-cy="animal-idade" type="number" placeholder="Idade Aproximada" {...register("idade")} />
+        {errors.idade && <span data-cy="animal-idade-erro" className="text-red-500 text-sm">{errors.idade.message}</span>}
       </div>
 
       <div className="flex flex-col">
-        <Input placeholder="Raça" {...register("raca")} />
+        <Input data-cy="animal-raca" placeholder="Raça" {...register("raca")} />
       </div>
 
       <div className="flex flex-col">
         <textarea
+          data-cy="animal-historia"
           placeholder="História e Perfil Comportamental"
           {...register("historia")}
           className="border p-2 rounded text-background placeholder:text-background"
         />
-        {errors.historia && <span className="text-red-500 text-sm">{errors.historia.message}</span>}
+        {errors.historia && <span data-cy="animal-historia-erro" className="text-red-500 text-sm">{errors.historia.message}</span>}
       </div>
 
       <div className="flex flex-col gap-1">
         <label className="text-sm text-background">Foto do animal</label>
         <input
+          data-cy="animal-foto"
           type="file"
           accept="image/*"
           ref={imageRef}
@@ -104,7 +107,7 @@ export const CadastroAnimal = () => {
         />
       </div>
 
-      <Button type="submit" disabled={isSubmitting}>
+      <Button data-cy="animal-submit" type="submit" disabled={isSubmitting}>
         {isSubmitting ? "Cadastrando..." : "Cadastrar"}
       </Button>
     </form>
