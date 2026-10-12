@@ -36,37 +36,40 @@ export const LoginForm = () => {
 
   return (
     <form
+      data-cy="login-form"
       onSubmit={handleSubmit(onSubmit)}
       className="flex flex-col justify-around rounded-sm gap-6 p-16 bg-backgroundClaro"
     >
       <div className="flex flex-col">
         <Input
+          data-cy="login-email"
           placeholder="Digite seu email"
           type="email"
           {...register("email")}
         />
         {errors.email && (
-          <span className="text-red-500 text-sm">{errors.email.message}</span>
+          <span data-cy="login-email-erro" className="text-red-500 text-sm">{errors.email.message}</span>
         )}
       </div>
 
       <div className="flex flex-col">
         <Input
+          data-cy="login-senha"
           placeholder="Digite sua senha"
           type="password"
           {...register("senha")}
         />
         {errors.senha && (
-          <span className="text-red-500 text-sm">{errors.senha.message}</span>
+          <span data-cy="login-senha-erro" className="text-red-500 text-sm">{errors.senha.message}</span>
         )}
       </div>
 
-      <Button type="submit" disabled={isSubmitting}>
+      <Button data-cy="login-submit" type="submit" disabled={isSubmitting}>
         {isSubmitting ? "Entrando..." : "Entrar"}
       </Button>
 
       <Link href="/cadastro/funcionario">
-        <Button type="button">Cadastrar-se</Button>
+        <Button data-cy="login-cadastrar" type="button">Cadastrar-se</Button>
       </Link>
     </form>
   );
